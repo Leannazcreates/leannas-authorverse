@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leanna's Authorverse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: #050508;
+      color: #f5d97e;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 3rem;
+      border-bottom: 0.5px solid rgba(245,217,126,0.12);
+      background: rgba(5,5,8,0.97);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: #f5d97e;
+      text-shadow: 0 0 20px rgba(245,217,126,0.35);
+      text-decoration: none;
+    }
+    .nav-logo span { color: #2dd4bf; }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links li a {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245,217,126,0.45);
+      text-decoration: none;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+    .nav-links li a:hover {
+      color: #2dd4bf;
+      text-shadow: 0 0 10px rgba(45,212,191,0.7);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 7rem 3rem 4rem;
+      text-align: center;
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(45,212,191,0.07) 0%, transparent 70%);
+    }
+    .hero-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #f472b6;
+      margin-bottom: 1.4rem;
+      text-shadow: 0 0 12px rgba(244,114,182,0.7);
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      font-weight: 300;
+      line-height: 1.05;
+      margin-bottom: 1.6rem;
+      color: #f5d97e;
+      text-shadow: 0 0 40px rgba(245,217,126,0.15);
+    }
+    .hero-title em {
+      font-style: italic;
+      color: #2dd4bf;
+      text-shadow: 0 0 30px rgba(45,212,191,0.6), 0 0 60px rgba(45,212,191,0.3);
+    }
+    .hero-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(245,217,126,0.45);
+      max-width: 520px;
+      margin: 0 auto 3rem;
+      line-height: 1.9;
+      letter-spacing: 0.03em;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 0.9rem 2.8rem;
+      border: 0.5px solid #2dd4bf;
+      color: #2dd4bf;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
+      box-shadow: 0 0 16px rgba(45,212,191,0.25), inset 0 0 16px rgba(45,212,191,0.04);
+      transition: all 0.25s;
+      border-radius: 2px;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background: rgba(45,212,191,0.12);
+      box-shadow: 0 0 30px rgba(45,212,191,0.5), inset 0 0 20px rgba(45,212,191,0.1);
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      overflow: hidden;
+      padding: 1rem 0;
+      margin: 4rem 0 0;
+      border-top: 0.5px solid rgba(245,217,126,0.08);
+      border-bottom: 0.5px solid rgba(245,217,126,0.08);
+      background: rgba(245,217,126,0.015);
+    }
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      white-space: nowrap;
+      animation: marquee 30s linear infinite;
+    }
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0 1.4rem;
+      flex-shrink: 0;
+    }
+    .marquee-name {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #2dd4bf;
+      text-shadow: 0 0 8px rgba(45,212,191,0.5);
+    }
+    .marquee-dot {
+      color: #f472b6;
+      text-shadow: 0 0 8px rgba(244,114,182,0.7);
+      font-size: 13px;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 3rem; text-align: center; }
+    .section-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(245,217,126,0.3);
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 300;
+      color: #f5d97e;
+      margin-bottom: 3rem;
+    }
+    .section-title span {
+      font-style: italic;
+      color: #2dd4bf;
+      text-shadow: 0 0 20px rgba(45,212,191,0.5);
+    }
+
+    /* ── PEN NAME CARDS ── */
+    .placeholder-note {
+      background: rgba(245,217,126,0.03);
+      border: 0.5px dashed rgba(245,217,126,0.18);
+      border-radius: 8px;
+      padding: 0.9rem 1.4rem;
+      margin-bottom: 2.5rem;
+      font-size: 12px;
+      color: rgba(245,217,126,0.35);
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+    .pen-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+    .pen-card {
+      position: relative;
+      border-radius: 14px;
+      padding: 2rem 1.4rem 1.8rem;
+      border: 0.5px solid rgba(245,217,126,0.08);
+      background: rgba(245,217,126,0.02);
+      cursor: pointer;
+      overflow: hidden;
+      transition: border-color 0.3s, background 0.3s, transform 0.25s;
+      text-align: center;
+    }
+    .pen-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.3s;
+      border-radius: 14px;
+    }
+    .pen-card:hover { transform: translateY(-4px); }
+
+    /* Teal glow */
+    .glow-teal::before { background: radial-gradient(ellipse at 50% 0%, rgba(45,212,191,0.18) 0%, transparent 70%); }
+    .glow-teal:hover { border-color: rgba(45,212,191,0.6); box-shadow: 0 0 28px rgba(45,212,191,0.25), 0 0 70px rgba(45,212,191,0.1), inset 0 0 24px rgba(45,212,191,0.05); background: rgba(45,212,191,0.04); }
+    .glow-teal:hover::before { opacity: 1; }
+    .glow-teal .pen-logo { color: #2dd4bf; }
+    .glow-teal:hover .pen-logo { box-shadow: 0 0 24px rgba(45,212,191,0.55); border-color: rgba(45,212,191,0.45); }
+    .glow-teal .pen-tag { background: rgba(45,212,191,0.1); color: #2dd4bf; }
+
+    /* Pink glow */
+    .glow-pink::before { background: radial-gradient(ellipse at 50% 0%, rgba(244,114,182,0.18) 0%, transparent 70%); }
+    .glow-pink:hover { border-color: rgba(244,114,182,0.6); box-shadow: 0 0 28px rgba(244,114,182,0.25), 0 0 70px rgba(244,114,182,0.1), inset 0 0 24px rgba(244,114,182,0.05); background: rgba(244,114,182,0.04); }
+    .glow-pink:hover::before { opacity: 1; }
+    .glow-pink .pen-logo { color: #f472b6; }
+    .glow-pink:hover .pen-logo { box-shadow: 0 0 24px rgba(244,114,182,0.55); border-color: rgba(244,114,182,0.45); }
+    .glow-pink .pen-tag { background: rgba(244,114,182,0.1); color: #f472b6; }
+
+    /* Gold glow */
+    .glow-gold::before { background: radial-gradient(ellipse at 50% 0%, rgba(245,217,126,0.2) 0%, transparent 70%); }
+    .glow-gold:hover { border-color: rgba(245,217,126,0.6); box-shadow: 0 0 28px rgba(245,217,126,0.3), 0 0 70px rgba(245,217,126,0.12), inset 0 0 24px rgba(245,217,126,0.06); background: rgba(245,217,126,0.04); }
+    .glow-gold:hover::before { opacity: 1; }
+    .glow-gold .pen-logo { color: #f5d97e; }
+    .glow-gold:hover .pen-logo { box-shadow: 0 0 24px rgba(245,217,126,0.65); border-color: rgba(245,217,126,0.5); }
+    .glow-gold .pen-tag { background: rgba(245,217,126,0.1); color: #f5d97e; }
+
+    /* Purple glow */
+    .glow-purple::before { background: radial-gradient(ellipse at 50% 0%, rgba(167,139,250,0.18) 0%, transparent 70%); }
+    .glow-purple:hover { border-color: rgba(167,139,250,0.6); box-shadow: 0 0 28px rgba(167,139,250,0.25), 0 0 70px rgba(167,139,250,0.1), inset 0 0 24px rgba(167,139,250,0.05); background: rgba(167,139,250,0.04); }
+    .glow-purple:hover::before { opacity: 1; }
+    .glow-purple .pen-logo { color: #a78bfa; }
+    .glow-purple:hover .pen-logo { box-shadow: 0 0 24px rgba(167,139,250,0.55); border-color: rgba(167,139,250,0.45); }
+    .glow-purple .pen-tag { background: rgba(167,139,250,0.1); color: #a78bfa; }
+
+    .pen-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 400;
+      font-style: italic;
+      border: 0.5px solid rgba(245,217,126,0.1);
+      transition: box-shadow 0.3s, border-color 0.3s;
+      background: rgba(245,217,126,0.03);
+      overflow: hidden;
+    }
+    /* When you swap in a real image: .pen-logo img { width:100%; height:100%; object-fit:cover; border-radius:50%; } */
+    .pen-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 400;
+      color: #f5d97e;
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+    .pen-genre {
+      font-size: 11px;
+      color: rgba(245,217,126,0.35);
+      letter-spacing: 0.06em;
+      line-height: 1.6;
+    }
+    .pen-tag {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* ── CATEGORIES ── */
+    .cat-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cat-btn {
+      padding: 0.7rem 1.6rem;
+      border-radius: 30px;
+      border: 0.5px solid rgba(245,217,126,0.12);
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(245,217,126,0.4);
+      cursor: pointer;
+      background: rgba(245,217,126,0.02);
+      transition: all 0.2s;
+    }
+    .cat-btn:hover {
+      border-color: #f472b6;
+      color: #f472b6;
+      box-shadow: 0 0 14px rgba(244,114,182,0.3);
+      background: rgba(244,114,182,0.05);
+    }
+
+    /* ── SPOKEN WORD ── */
+    .stage-section {
+      margin: 0;
+      padding: 5rem 3rem;
+      border-top: 0.5px solid rgba(45,212,191,0.1);
+      border-bottom: 0.5px solid rgba(45,212,191,0.1);
+      text-align: center;
+      background: radial-gradient(ellipse 100% 80% at 50% 0%, rgba(45,212,191,0.06) 0%, transparent 65%);
+    }    .stage-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: #2dd4bf;
+      text-shadow: 0 0 10px rgba(45,212,191,0.6);
+      margin-bottom: 0.8rem;
+    }
+    .stage-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      font-style: italic;
+      color: #f5d97e;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 0 30px rgba(245,217,126,0.15);
+    }
+    .stage-sub {
+      font-size: 14px;
+      color: rgba(245,217,126,0.35);
+      margin-bottom: 3rem;
+      letter-spacing: 0.04em;
+    }
+    .clips-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .clip-card {
+      border: 0.5px solid rgba(245,217,126,0.1);
+      border-radius: 12px;
+      padding: 1.4rem 1.6rem;
+      min-width: 160px;
+      text-align: center;
+      background: rgba(245,217,126,0.02);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .clip-card:hover {
+      border-color: rgba(45,212,191,0.5);
+      box-shadow: 0 0 24px rgba(45,212,191,0.2);
+      transform: translateY(-2px);
+    }
+    .clip-play {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 0.5px solid rgba(45,212,191,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2dd4bf;
+      margin: 0 auto 1rem;
+      transition: box-shadow 0.25s;
+      font-size: 16px;
+    }
+    .clip-card:hover .clip-play { box-shadow: 0 0 18px rgba(45,212,191,0.55); }
+    .clip-title { font-size: 14px; color: #f5d97e; margin-bottom: 0.3rem; }
+    .clip-meta { font-size: 11px; color: rgba(245,217,126,0.3); }
+
+    /* ── MERCH ── */
+    .merch-section {
+      padding: 4rem 3rem;
+      text-align: center;
+      border-top: 0.5px solid rgba(244,114,182,0.12);
+      background: radial-gradient(ellipse 60% 100% at 50% 50%, rgba(244,114,182,0.06) 0%, transparent 65%);
+    }
+    .merch-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 300;
+      font-style: italic;
+      color: #f5d97e;
+      margin-bottom: 0.5rem;
+    }
+    .merch-sub { font-size: 14px; color: rgba(245,217,126,0.35); margin-bottom: 1.5rem; }
+    .btn-pink {
+      padding: 0.85rem 2.2rem;
+      border: 0.5px solid #f472b6;
+      color: #f472b6;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
+      border-radius: 2px;
+      white-space: nowrap;
+      box-shadow: 0 0 14px rgba(244,114,182,0.2);
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-pink:hover {
+      background: rgba(244,114,182,0.1);
+      box-shadow: 0 0 30px rgba(244,114,182,0.4);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 0.5px solid rgba(245,217,126,0.06);
+      padding: 3rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: rgba(245,217,126,0.3);
+      margin-bottom: 0.5rem;
+    }
+    .footer-logo span {
+      color: #2dd4bf;
+      text-shadow: 0 0 10px rgba(45,212,191,0.4);
+    }
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(245,217,126,0.18);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .nav-links li a { font-size: 10px; letter-spacing: 0.1em; }
+      .hero { padding: 5rem 1.5rem 3rem; }
+      .hero-title { font-size: 44px; }
+      section { padding: 3.5rem 1.5rem; }
+      .merch-section { text-align: center; padding: 3rem 1.5rem; }
+      .stage-title { font-size: 34px; }
+      footer { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Leanna's <span>Authorverse</span></a>
+    <ul class="nav-links">
+      <li><a href="#books">Books</a></li>
+      <li><a href="#merch">Merch</a></li>
+      <li><a href="#spoken-word">Spoken Word</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <p class="hero-eyebrow">Poetry · Affirmations · Humor · Legacy · History</p>
+    <h1 class="hero-title">One Woman.<br><em>Many Worlds.</em></h1>
+    <p class="hero-sub">Seven pen names. One vision. Raw testimony, healing poetry, bold humor, Black history — all in one universe.</p>
+    <a href="#pen-names" class="btn-primary">Explore the Authorverse</a>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack"></div>
+  </div>
+
+  <!-- PEN NAMES -->
+  <section id="pen-names">
+    <p class="section-eyebrow">The Pen Names</p>
+    <h2 class="section-title">Worlds <span>Within Worlds</span></h2>
+
+    <div class="placeholder-note">
+      ✦ &nbsp;Replace the initials below with your author logo image or photo — see the code comments for how&nbsp; ✦
+    </div>
+
+    <div class="pen-grid" id="books">
+
+      <!-- TO SWAP IN YOUR LOGO: replace the initials text with:
+           <img src="your-logo-file.png" alt="Indigo Euphoria logo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+      -->
+
+      <div class="pen-card glow-teal">
+        <div class="pen-logo">IE</div>
+        <div class="pen-name">Indigo Euphoria</div>
+        <div class="pen-genre">Poetry · How-To Publishing</div>
+        <div class="pen-tag">Explore</div>
+      </div>
+
+      <div class="pen-card glow-pink">
+        <div class="pen-logo">ZJ</div>
+        <div class="pen-name">Zunita Joana</div>
+        <div class="pen-genre">Raw Testimony · Prose</div>
+        <div class="pen-tag">Explore</div>
+      </div>
+
+      <div class="pen-card glow-gold">
+        <div class="pen-logo">LJ</div>
+        <div class="pen-name">Leanna Jones</div>
+        <div class="pen-genre">Affirmations</div>
+        <div class="pen-tag">Explore</div>
+      </div>
+
+      <div class="pen-card glow-purple">
+        <div class="pen-logo">LL</div>
+        <div class="pen-name">LeLe Lit</div>
+        <div class="pen-genre">Adult Parody · Humor</div>
+        <div class="pen-tag">Explore</div>
+      </div>
+
+      <div class="pen-card glow-teal">
+        <div class="pen-logo">LZ</div>
+        <div class="pen-name">Leanna Zunita</div>
+        <div class="pen-genre">Black Culture · History</div>
+        <div class="pen-tag">Explore</div>
+      </div>
+
+      <div class="pen-card glow-gold">
+        <div class="pen-logo">L</div>
+        <div class="pen-name">Leanna</div>
+        <div class="pen-genre">Earned Wisdom · Legacy</div>
+        <div class="pen-tag">Explore</div>
+      </div>
+
+      <div class="pen-card glow-pink">
+        <div class="pen-logo">LLk</div>
+        <div class="pen-name">LeLe Luck</div>
+        <div class="pen-genre">Romantic Comedy Novellas</div>
+        <div class="pen-tag">Explore</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SHOP BY CATEGORY -->
+  <section style="padding-top: 0;">
+    <p class="section-eyebrow">Shop By</p>
+    <h2 class="section-title">Find What <span>You Need</span></h2>
+    <div class="cat-row">
+      <button class="cat-btn">Books</button>
+      <button class="cat-btn">Merch</button>
+      <button class="cat-btn">Poetry</button>
+      <button class="cat-btn">Affirmations</button>
+      <button class="cat-btn">Humor</button>
+      <button class="cat-btn">History</button>
+      <button class="cat-btn">How-To</button>
+    </div>
+  </section>
+
+  <!-- SPOKEN WORD -->
+  <div class="stage-section" id="spoken-word">
+    <p class="stage-eyebrow">Hear It Live</p>
+    <h2 class="stage-title">On Stage &amp; Out Loud</h2>
+    <p class="stage-sub">Watch Leanna perform — from intimate readings to full stage spoken word.</p>
+    <div class="clips-row">
+
+      <!-- TO ADD A REAL VIDEO: replace the clip-card div with an iframe or video embed -->
+      <div class="clip-card">
+        <div class="clip-play">&#9654;</div>
+        <div class="clip-title">Featured Poem</div>
+        <div class="clip-meta">Live Reading</div>
+      </div>
+
+      <div class="clip-card">
+        <div class="clip-play">&#9654;</div>
+        <div class="clip-title">Open Mic Clip</div>
+        <div class="clip-meta">Stage Performance</div>
+      </div>
+
+      <div class="clip-card">
+        <div class="clip-play">&#9654;</div>
+        <div class="clip-title">New Work</div>
+        <div class="clip-meta">Studio Reading</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MERCH -->
+  <div class="merch-section" id="merch">
+    <div class="merch-title">Wear the Words</div>
+    <div class="merch-sub">Tees, totes, prints and more — Authorverse merch coming soon.</div>
+    <a href="#" class="btn-pink">Shop Merch</a>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="section-eyebrow">The Author</p>
+    <h2 class="section-title">About <span>Leanna</span></h2>
+    <p style="font-size:15px; color:rgba(245,217,126,0.5); max-width:620px; margin: 0 auto; line-height:2; font-weight:300; letter-spacing:0.03em; text-align:center;">
+      <!-- Add your bio here -->
+      Writer. Publisher. Poet. Seven worlds, one voice. Leanna has been writing since 2001 and independently publishing since 2018 — handling everything from the words to the cover to the upload, completely on her own terms.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Leanna's <span>Authorverse</span></div>
+    <p class="footer-copy">© 2026 Leanna's Authorverse · All rights reserved</p>
+  </footer>
+
+  <script>
+    // Scrolling marquee
+    const names = [
+      'Indigo Euphoria','Zunita Joana','Leanna Jones','LeLe Lit',
+      'Leanna Zunita','Leanna','LeLe Luck',
+      'Indigo Euphoria','Zunita Joana','Leanna Jones','LeLe Lit',
+      'Leanna Zunita','Leanna','LeLe Luck'
+    ];
+    const track = document.getElementById('marqueeTrack');
+    names.forEach((name) => {
+      const span = document.createElement('span');
+      span.className = 'marquee-item';
+      span.innerHTML = '<span class="marquee-dot">&#9670;</span><span class="marquee-name">' + name + '</span>';
+      track.appendChild(span);
+    });
+  </script>
+
+</body>
+</html>
