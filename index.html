@@ -85,6 +85,7 @@
       color: #2dd4bf;
       text-shadow: 0 0 30px rgba(45,212,191,0.6), 0 0 60px rgba(45,212,191,0.3);
     }
+    .hero-title .purple { color: #a78bfa; text-shadow: 0 0 30px rgba(167,139,250,0.5); }
     .hero-sub {
       font-size: 15px;
       font-weight: 300;
@@ -141,8 +142,8 @@
       font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #2dd4bf;
-      text-shadow: 0 0 8px rgba(45,212,191,0.5);
+      color: #a78bfa;
+      text-shadow: 0 0 8px rgba(167,139,250,0.5);
     }
     .marquee-dot {
       color: #f472b6;
@@ -175,19 +176,18 @@
       color: #2dd4bf;
       text-shadow: 0 0 20px rgba(45,212,191,0.5);
     }
+    .col-pink { color: #f472b6; text-shadow: 0 0 20px rgba(244,114,182,0.5); font-style: italic; }
+    .col-purple { color: #a78bfa; text-shadow: 0 0 20px rgba(167,139,250,0.5); font-style: italic; }
+    .highlight-purple {
+      background: rgba(167,139,250,0.18);
+      color: #f472b6;
+      text-shadow: 0 0 20px rgba(244,114,182,0.5);
+      font-style: italic;
+      border-radius: 4px;
+      padding: 0 6px;
+    }
 
     /* ── PEN NAME CARDS ── */
-    .placeholder-note {
-      background: rgba(245,217,126,0.03);
-      border: 0.5px dashed rgba(245,217,126,0.18);
-      border-radius: 8px;
-      padding: 0.9rem 1.4rem;
-      margin-bottom: 2.5rem;
-      font-size: 12px;
-      color: rgba(245,217,126,0.35);
-      text-align: center;
-      letter-spacing: 0.04em;
-    }
     .pen-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -264,13 +264,12 @@
       overflow: hidden;
     }
     .pen-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-}
-    /* When you swap in a real image: .pen-logo img { width:100%; height:100%; object-fit:cover; border-radius:50%; } */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
     .pen-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 19px;
@@ -305,21 +304,23 @@
     .cat-btn {
       padding: 0.7rem 1.6rem;
       border-radius: 30px;
-      border: 0.5px solid rgba(245,217,126,0.12);
+      border: 0.5px solid rgba(244,114,182,0.3);
       font-family: 'Jost', sans-serif;
       font-size: 12px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(245,217,126,0.4);
+      color: #f472b6;
       cursor: pointer;
-      background: rgba(245,217,126,0.02);
+      background: rgba(244,114,182,0.04);
       transition: all 0.2s;
+      text-shadow: 0 0 8px rgba(244,114,182,0.3);
     }
     .cat-btn:hover {
-      border-color: #f472b6;
-      color: #f472b6;
-      box-shadow: 0 0 14px rgba(244,114,182,0.3);
-      background: rgba(244,114,182,0.05);
+      border-color: #a78bfa;
+      color: #a78bfa;
+      box-shadow: 0 0 16px rgba(167,139,250,0.35);
+      background: rgba(167,139,250,0.08);
+      text-shadow: 0 0 10px rgba(167,139,250,0.5);
     }
 
     /* ── SPOKEN WORD ── */
@@ -330,7 +331,8 @@
       border-bottom: 0.5px solid rgba(45,212,191,0.1);
       text-align: center;
       background: radial-gradient(ellipse 100% 80% at 50% 0%, rgba(45,212,191,0.06) 0%, transparent 65%);
-    }    .stage-eyebrow {
+    }
+    .stage-eyebrow {
       font-size: 10px;
       letter-spacing: 0.26em;
       text-transform: uppercase;
@@ -349,7 +351,8 @@
     }
     .stage-sub {
       font-size: 14px;
-      color: rgba(245,217,126,0.35);
+      color: #f472b6;
+      text-shadow: 0 0 10px rgba(244,114,182,0.4);
       margin-bottom: 3rem;
       letter-spacing: 0.04em;
     }
@@ -403,7 +406,8 @@
       font-size: 32px;
       font-weight: 300;
       font-style: italic;
-      color: #f5d97e;
+      color: #2dd4bf;
+      text-shadow: 0 0 20px rgba(45,212,191,0.4);
       margin-bottom: 0.5rem;
     }
     .merch-sub { font-size: 14px; color: rgba(245,217,126,0.35); margin-bottom: 1.5rem; }
@@ -494,78 +498,97 @@
   <!-- PEN NAMES -->
   <section id="pen-names">
     <p class="section-eyebrow">The Pen Names</p>
-    <h2 class="section-title">Worlds <span>Within Worlds</span></h2>
-
-    <div class="placeholder-note">
-      ✦ &nbsp;Replace the initials below with your author logo image or photo — see the code comments for how&nbsp; ✦
-    </div>
+    <h2 class="section-title" style="color:#2dd4bf;text-shadow:0 0 20px rgba(45,212,191,0.4);"><span class="col-pink">Worlds</span> <span class="col-purple">Within</span> Worlds</h2>
 
     <div class="pen-grid" id="books">
 
-      <!-- TO SWAP IN YOUR LOGO: replace the initials text with:
-           <img src="your-logo-file.png" alt="Indigo Euphoria logo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
-      -->
-
-      <div class="pen-card glow-teal">
+      <!-- Indigo Euphoria — Poetry (pink) -->
+      <div class="pen-card glow-pink">
         <div class="pen-logo">
-  <img src="IndigoEuphoria.png" alt="Indigo Euphoria">
-</div>
+          <img src="IndigoEuphoria.png" alt="Indigo Euphoria">
+        </div>
         <div class="pen-name">Indigo Euphoria</div>
-        <div class="pen-genre">Poetry · How-To Publishing</div>
+        <div class="pen-genre">Poetry</div>
         <div class="pen-tag">Explore</div>
       </div>
 
-      <div class="pen-card glow-pink">
+      <!-- Indigo Euphoria — How To (purple) -->
+      <div class="pen-card glow-purple">
         <div class="pen-logo">
-  <img src="ZunitaJoana.png" alt="Zunita Joana">
-</div>
+          <img src="IndigoEuphoria.png" alt="Indigo Euphoria">
+        </div>
+        <div class="pen-name">Indigo Euphoria</div>
+        <div class="pen-genre">How To</div>
+        <div class="pen-tag">Explore</div>
+      </div>
+
+      <!-- Zunita Joana (gold) -->
+      <div class="pen-card glow-gold">
+        <div class="pen-logo">
+          <img src="ZunitaJoana.png" alt="Zunita Joana">
+        </div>
         <div class="pen-name">Zunita Joana</div>
         <div class="pen-genre">Raw Testimony · Prose</div>
         <div class="pen-tag">Explore</div>
       </div>
 
-      <div class="pen-card glow-gold">
+      <!-- Leanna Jones (turquoise) -->
+      <div class="pen-card glow-teal">
         <div class="pen-logo">
-  <img src="LeannaJones.png" alt="Leanna Jones">
-</div>
+          <img src="LeannaJones.png" alt="Leanna Jones">
+        </div>
         <div class="pen-name">Leanna Jones</div>
         <div class="pen-genre">Affirmations</div>
         <div class="pen-tag">Explore</div>
       </div>
 
-      <div class="pen-card glow-purple">
+      <!-- LeLe Lit (pink) -->
+      <div class="pen-card glow-pink">
         <div class="pen-logo">
-  <img src="LeleLit.png" alt="LeLe Lit">
-</div>
+          <img src="LeleLit.png" alt="LeLe Lit">
+        </div>
         <div class="pen-name">LeLe Lit</div>
         <div class="pen-genre">Adult Parody · Humor</div>
         <div class="pen-tag">Explore</div>
       </div>
 
-      <div class="pen-card glow-teal">
+      <!-- Leanna Zunita (purple) -->
+      <div class="pen-card glow-purple">
         <div class="pen-logo">
-  <img src="LeannaZunita.png" alt="Leanna Zunita">
-</div>
+          <img src="LeannaZunita.png" alt="Leanna Zunita">
+        </div>
         <div class="pen-name">Leanna Zunita</div>
         <div class="pen-genre">Black Culture · History</div>
         <div class="pen-tag">Explore</div>
       </div>
 
+      <!-- Leanna (gold) -->
       <div class="pen-card glow-gold">
         <div class="pen-logo">
-  <img src="Leanna.png" alt="Leanna">
-</div>
+          <img src="Leanna.png" alt="Leanna">
+        </div>
         <div class="pen-name">Leanna</div>
         <div class="pen-genre">Earned Wisdom · Legacy</div>
         <div class="pen-tag">Explore</div>
       </div>
 
-      <div class="pen-card glow-pink">
+      <!-- LeLe Luck (turquoise) -->
+      <div class="pen-card glow-teal">
         <div class="pen-logo">
-  <img src="LeleLuck.png" alt="LeLe Luck">
-</div>
+          <img src="LeleLuck.png" alt="LeLe Luck">
+        </div>
         <div class="pen-name">LeLe Luck</div>
         <div class="pen-genre">Romantic Comedy Novellas</div>
+        <div class="pen-tag">Explore</div>
+      </div>
+
+      <!-- Leannaz (pink) -->
+      <div class="pen-card glow-pink">
+        <div class="pen-logo">
+          <img src="Leannaz.png" alt="Leannaz">
+        </div>
+        <div class="pen-name">Leannaz</div>
+        <div class="pen-genre">Lifestyle &amp; Niches</div>
         <div class="pen-tag">Explore</div>
       </div>
 
@@ -575,7 +598,7 @@
   <!-- SHOP BY CATEGORY -->
   <section style="padding-top: 0;">
     <p class="section-eyebrow">Shop By</p>
-    <h2 class="section-title">Find What <span>You Need</span></h2>
+    <h2 class="section-title" style="color:#2dd4bf;text-shadow:0 0 20px rgba(45,212,191,0.4);"><span class="col-pink">Find</span> What <span style="color:#2dd4bf;font-style:italic;text-shadow:0 0 20px rgba(45,212,191,0.5);">You</span> <span class="col-purple">Need</span></h2>
     <div class="cat-row">
       <button class="cat-btn">Books</button>
       <button class="cat-btn">Merch</button>
@@ -584,6 +607,7 @@
       <button class="cat-btn">Humor</button>
       <button class="cat-btn">History</button>
       <button class="cat-btn">How-To</button>
+      <button class="cat-btn">Rom-Com</button>
     </div>
   </section>
 
@@ -593,26 +617,21 @@
     <h2 class="stage-title">On Stage &amp; Out Loud</h2>
     <p class="stage-sub">Watch Leanna perform — from intimate readings to full stage spoken word.</p>
     <div class="clips-row">
-
-      <!-- TO ADD A REAL VIDEO: replace the clip-card div with an iframe or video embed -->
       <div class="clip-card">
         <div class="clip-play">&#9654;</div>
         <div class="clip-title">Featured Poem</div>
         <div class="clip-meta">Live Reading</div>
       </div>
-
       <div class="clip-card">
         <div class="clip-play">&#9654;</div>
         <div class="clip-title">Open Mic Clip</div>
         <div class="clip-meta">Stage Performance</div>
       </div>
-
       <div class="clip-card">
         <div class="clip-play">&#9654;</div>
         <div class="clip-title">New Work</div>
         <div class="clip-meta">Studio Reading</div>
       </div>
-
     </div>
   </div>
 
@@ -628,7 +647,6 @@
     <p class="section-eyebrow">The Author</p>
     <h2 class="section-title">About <span>Leanna</span></h2>
     <p style="font-size:15px; color:rgba(245,217,126,0.5); max-width:620px; margin: 0 auto; line-height:2; font-weight:300; letter-spacing:0.03em; text-align:center;">
-      <!-- Add your bio here -->
       Writer. Publisher. Poet. Seven worlds, one voice. Leanna has been writing since 2001 and independently publishing since 2018 — handling everything from the words to the cover to the upload, completely on her own terms.
     </p>
   </section>
@@ -640,12 +658,11 @@
   </footer>
 
   <script>
-    // Scrolling marquee
     const names = [
       'Indigo Euphoria','Zunita Joana','Leanna Jones','LeLe Lit',
-      'Leanna Zunita','Leanna','LeLe Luck',
+      'Leanna Zunita','Leanna','LeLe Luck','Leannaz',
       'Indigo Euphoria','Zunita Joana','Leanna Jones','LeLe Lit',
-      'Leanna Zunita','Leanna','LeLe Luck'
+      'Leanna Zunita','Leanna','LeLe Luck','Leannaz'
     ];
     const track = document.getElementById('marqueeTrack');
     names.forEach((name) => {
